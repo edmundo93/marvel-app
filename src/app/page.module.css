@@ -1,0 +1,63 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1512px;
+  max-height: 982px;
+  top: 100px;
+  left: 100px;
+  gap: 0px;
+  opacity: 0px;
+  margin: 0 auto;
+}
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+}
+
+@media (prefers-reduced-motion) {
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 393px;
+    max-height: 852px;
+    top: 100px;
+    left: 100px;
+    padding: 0px 0px 24px 0px;
+    gap: 0px;
+    opacity: 0px;
+    margin: 0 auto;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 834px;
+    max-height: 1194px;
+    top: 100px;
+    left: 100px;
+    gap: 0px;
+    opacity: 0px;
+    margin: 0 auto;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

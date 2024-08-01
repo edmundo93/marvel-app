@@ -1,0 +1,12 @@
+.container {
+  position: relative;
+  width: 56px;
+  height: 37.68px;
+  padding: 8px 0px 0px 0px;
+  gap: 8px;
+  opacity: 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
