@@ -1,0 +1,13 @@
+.matrix {
+  position: relative;
+  width: 100%;
+  max-width: 1512px;
+  height: 1031.89px;
+  gap: 16px;
+  opacity: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}

@@ -7,35 +7,25 @@
   gap: 0px;
   justify-content: space-between;
   opacity: 0px;
-  background-color: var(--primary-var-bgcolor);
+  background-color: var(--primary-bar-bgcolor);
   width: 100%;
+  color: var(--primary-bar-color);
 }
 
 /* Mobile */
 @media (max-width: 700px) {
   .navbar {
-    position: relative;
     max-width: 393px;
     max-height: 84px;
     padding: 16px;
-    display: flex;
-    gap: 0px;
-    justify-content: space-between;
-    opacity: 0px;
-    background-color: var(--primary-var-bgcolor);
   }
 }
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .navbar {
-    position: relative;
     max-width: 834px;
     max-height: 84px;
     padding: 16px 48px 16px 48px;
-    gap: 0px;
-    justify-content: space-between;
-    opacity: 0px;
-    display: flex;
   }
 }

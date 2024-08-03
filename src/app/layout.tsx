@@ -1,8 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Roboto_Condensed } from 'next/font/google';
 import './globals.css';
+import styles from './page.module.css';
+import Navbar from '@/presentation/components/nav-bar/nav-bar';
+import { FavCharactersContextProvider } from '@/presentation/contexts/fav-characters-context/fav-characters.context';
+import { Suspense } from 'react';
+import ProgressBar from '@/presentation/components/ui/progress-bar/progress-bar';
 
-const inter = Inter({ subsets: ['latin'] });
+const roboto_condensed = Roboto_Condensed({ subsets: ['latin'], weight: '400',  })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +21,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={roboto_condensed.className}>
+        <main className={styles.main}>
+          <FavCharactersContextProvider>
+            <Navbar />
+            <div className={styles.content}>
+              <Suspense fallback={<ProgressBar />}>
+                {children}
+              </Suspense>
+            </div>
+          </FavCharactersContextProvider>
+        </main>
+      </body>
     </html>
   );
 }

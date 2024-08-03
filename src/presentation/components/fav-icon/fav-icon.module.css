@@ -1,0 +1,16 @@
+.icon {
+  position: relative;
+  width: 24px;
+  height: 21.68px;
+  gap: 0px;
+  opacity: 0px;
+  background-image: url('/unselect-fav.svg');
+}
+
+.selected {
+  background-image: url('/select-fav.svg') !important;
+}
+
+.selectedHovered {
+  background-image: url('/hover-select-fav.svg') !important;
+}

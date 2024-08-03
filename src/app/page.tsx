@@ -1,10 +1,6 @@
-import Navbar from '@/presentation/components/nav-bar/nav-bar';
-import styles from './page.module.css';
+import React from "react";
+import MainView from "@/presentation/components/main-view/main-view";
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <Navbar />
-    </main>
-  );
+  return <MainView />
 }

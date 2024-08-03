@@ -10,7 +10,25 @@
   gap: 0px;
   opacity: 0px;
   margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
 }
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1512px;
+  max-height: 966.91px;
+  padding: 48px 0px 48px 0px;
+  gap: 24px;
+  opacity: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
 }
