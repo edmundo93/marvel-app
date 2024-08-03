@@ -1,0 +1,69 @@
+.card {
+  position: relative;
+  width: 172.5px;
+  height: 245.97px;
+  gap: 0px;
+  border: 3px 0px 0px 0px;
+  opacity: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.photo {
+  position: relative;
+  width: 172.5px;
+  height: 189.97px;
+  gap: 0px;
+  border-bottom: 4px;
+  opacity: 0px;
+  background-color: var(--background-photo-card);
+}
+
+.separator {
+  position: absolute;
+  width: 172.5px;
+  height: 5.38px;
+  gap: 0px;
+  opacity: 0px;
+  background-color: var(--marvel-red);
+  bottom: 0;
+}
+
+.info {
+  position: relative;
+  width: 172.5px;
+  height: 56px;
+  padding: 16px 16px 24px 16px;
+  gap: 0px;
+  justify-content: space-between;
+  opacity: 0px;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--primary-bar-bgcolor);
+  color: var(--primary-bar-color);
+  align-items: center;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.card:hover .info {
+  background-color: var(--marvel-red);
+}
+
+.corner {
+  position: relative;
+  width: 12.86px;
+  height: 12.86px;
+  gap: 0px;
+  opacity: 0px;
+  background-color: linear-gradient(to bottom right, #ffffff 50%, #000000 50%);
+}
+
+.favButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+}

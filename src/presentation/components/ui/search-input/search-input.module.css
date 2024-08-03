@@ -1,0 +1,24 @@
+.searchInput {
+  position: relative;
+  width: 100%;
+  max-width: 1416px;
+  height: 27px;
+  padding: 0px 0px 8px 0px;
+  gap: 12px;
+  line-height: 18.75px;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #000000;
+}
+
+.searchInput input {
+  position: relative;
+  outline: none;
+  line-height: 18.75px;
+  text-align: left;
+  border: 0;
+}
+
+.searchInput input:focus {
+  outline: none;
+}

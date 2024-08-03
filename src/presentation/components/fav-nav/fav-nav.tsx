@@ -1,14 +1,18 @@
 import React from 'react';
-import Image from 'next/image';
 
 import styles from './fav-nav.module.css';
+import Link from 'next/link';
+import FavIcon from '../fav-icon/fav-icon';
 
-import FavIcon from '/public/filled-fav-icon.svg';
+interface IProps {
+  numFavs: number
+}
 
-const FavNav = () => {
+const FavNav = (props: IProps) => {
   return (
     <div className={styles.container}>
-      <Image src={FavIcon} alt="favs button" />
+      <Link href={''}><FavIcon selected={true} width={24} height={21.68} /></Link>
+      {props.numFavs}
     </div>
   );
 };
