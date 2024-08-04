@@ -1,12 +1,12 @@
 .navbar {
   position: relative;
   max-width: 1512px;
-  max-height: 84px;
-  padding: 16px 48px 16px 48px;
+  width: 100vw;
+  height: 84px;
+  padding: 1rem 3rem;
   display: flex;
   gap: 0px;
   justify-content: space-between;
-  opacity: 0px;
   background-color: var(--primary-bar-bgcolor);
   width: 100%;
   color: var(--primary-bar-color);
@@ -16,8 +16,8 @@
 @media (max-width: 700px) {
   .navbar {
     max-width: 393px;
-    max-height: 84px;
-    padding: 16px;
+    height: 84px;
+    padding-top: 1rem;
   }
 }
 
@@ -25,7 +25,7 @@
 @media (min-width: 701px) and (max-width: 1120px) {
   .navbar {
     max-width: 834px;
-    max-height: 84px;
-    padding: 16px 48px 16px 48px;
+    height: 84px;
+    padding: 1rem 3rem;
   }
 }

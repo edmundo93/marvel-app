@@ -1,4 +1,4 @@
-type CharacterThumbnailT = {
+export type CharacterThumbnailT = {
   path: string;
   extension: string;
 };

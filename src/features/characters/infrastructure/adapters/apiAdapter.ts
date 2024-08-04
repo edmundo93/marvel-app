@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-export const apiFetch = async (url: string): Promise<any> => {
+export const apiFetch = async (url: string, signal: any): Promise<any> => {
   try {
-    const response = await fetch(url, { next: { revalidate: 900 } });
+    const response = await fetch(url, { next: { revalidate: 900 }, signal });
 
     if (response.status === 200) {
       const jsonResp = await response.json();

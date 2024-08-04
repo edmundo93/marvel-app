@@ -8,8 +8,8 @@ export const CharactersService = (
     getAllCharacters: async () => {
       return await apiService.getAllCharacters();
     },
-    getCharacterByName: async (name: string) => {
-      return await apiService.getCharacterByName(name);
+    getCharacterByName: async (name: string, signal: AbortSignal) => {
+      return await apiService.getCharacterByName(name, signal);
     },
   };
 };

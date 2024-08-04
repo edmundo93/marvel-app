@@ -1,6 +1,6 @@
-import { Character } from "@/domain/entities/Character";
 import { ActionI } from "./types";
 import { ADD_CHARACTER, REMOVE_CHARACTER } from "./constants";
+import { Character } from "@/features/characters/domain/entities/Character";
 
 interface FavCharactersStateI { favCharacters: Character[] }
 

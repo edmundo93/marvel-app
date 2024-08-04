@@ -3,8 +3,18 @@ import RootLayout from '@/app/layout';
 import '@testing-library/jest-dom';
 import { ReactNode } from 'react';
 
-jest.mock('@/presentation/components/nav-bar/nav-bar', () => () => <div>Mocked Navbar</div>);
-jest.mock('@/presentation/components/ui/progress-bar/progress-bar', () => () => <div>Mocked ProgressBar</div>);
+jest.mock('@/presentation/components/nav-bar/nav-bar', () => {
+  const MockNavBar = () => <div>Mocked Navbar</div>
+  MockNavBar.displayName = 'MockNavBar'
+  
+  return MockNavBar
+});
+jest.mock('@/presentation/components/ui/progress-bar/progress-bar', () => {
+  const MockProgressBar = () => <div>Mocked ProgressBar</div>
+  MockProgressBar.displayName = 'MockProgressBar'
+  
+  return MockProgressBar
+});
 
 describe('RootLayout', () => {
   it('renders children correctly', () => {

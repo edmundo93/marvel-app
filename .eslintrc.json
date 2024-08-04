@@ -1,5 +1,13 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
-  "plugins": ["@typescript-eslint"]
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "react/react-in-jsx-scope": "off", //React 17+ not need import React in every file
+    "react-hooks/exhaustive-deps": "off"
+  }
 }

@@ -1,32 +1,29 @@
 .main {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   max-width: 1512px;
-  max-height: 982px;
-  top: 100px;
-  left: 100px;
+  height: 982px;
   gap: 0px;
-  opacity: 0px;
-  margin: 0 auto;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .content {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   max-width: 1512px;
-  max-height: 966.91px;
-  padding: 48px 0px 48px 0px;
+  height: 966.91px;
+  padding: 0 3rem;
   gap: 24px;
-  opacity: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* Enable hover only on non-touch devices */
@@ -39,35 +36,28 @@
 /* Mobile */
 @media (max-width: 700px) {
   .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     max-width: 393px;
     max-height: 852px;
-    top: 100px;
-    left: 100px;
-    padding: 0px 0px 24px 0px;
-    gap: 0px;
-    opacity: 0px;
-    margin: 0 auto;
+    padding-bottom: 24px;
+  }
+
+  .content {
+    max-width: 393px;
+    max-height: 3014.68px;
+    padding: 0 24px;
   }
 }
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 834px;
+    width: 834px;
     max-height: 1194px;
-    top: 100px;
-    left: 100px;
-    gap: 0px;
-    opacity: 0px;
-    margin: 0 auto;
+  }
+
+  .content {
+    max-width: 834px;
+    max-height: 1752.83px;
   }
 }
 
