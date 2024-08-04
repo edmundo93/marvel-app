@@ -4,7 +4,6 @@
   height: 245.97px;
   gap: 0px;
   border: 3px 0px 0px 0px;
-  opacity: 0px;
   display: flex;
   flex-direction: column;
 }
@@ -36,34 +35,62 @@
   padding: 16px 16px 24px 16px;
   gap: 0px;
   justify-content: space-between;
-  opacity: 0px;
   display: flex;
   flex-direction: row;
-  background-color: var(--primary-bar-bgcolor);
+  background: var(--primary-bar-bgcolor);
   color: var(--primary-bar-color);
   align-items: center;
-  transition: background-color 0.3s ease-in-out;
+  z-index: 1;
 }
 
-.card:hover .info {
-  background-color: var(--marvel-red);
+.info::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--marvel-red);
+  z-index: -1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .info::after {
+    animation: expnadBgColorAnimation 0.3s ease-in-out forwards;
+  }
+
+  .card:not(:hover) .info::after {
+    animation: foldBgColorAnimation 0.3s ease-in-out forwards;
+  }
+}
+
+@keyframes expnadBgColorAnimation {
+  from {
+    height: 0%;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes foldBgColorAnimation {
+  from {
+    height: 100%;
+  }
+
+  to {
+    height: 0%;
+  }
 }
 
 .corner {
-  position: relative;
+  position: absolute;
   width: 12.86px;
   height: 12.86px;
   gap: 0px;
-  opacity: 0px;
-  background-color: linear-gradient(to bottom right, #ffffff 50%, #000000 50%);
-}
-
-.favButton {
-  position: relative;
-  display: flex;
-  align-items: center;
-  background-color: transparent;
-  outline: none;
-  border: 0;
-  cursor: pointer;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to bottom right, transparent 50%, #ffffff 50%);
+  z-index: 2;
 }

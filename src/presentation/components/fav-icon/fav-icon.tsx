@@ -1,7 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-
-import styles from './fav-icon.module.css'
 
 interface IProps {
     selected?: boolean
@@ -11,13 +9,31 @@ interface IProps {
 }
 
 const FavIcon = (props: IProps) => {
-    if (props.selected) {
-        if (props.hovered) {
-            return <Image src='/hover-select-fav.svg' alt='selected hover fav' width={props.width ?? 24} height={props.height ?? 21.68} />
+    const [src, setSrc] = useState<string>('/unselect-fav.svg')
+    const [width, setWidth] = useState<number>(24)
+    const [height, setHeight] = useState<number>(21.68)
+
+    useEffect(() => {
+        const icon = getSrc()
+        setSrc(icon)
+    }, [props.selected, props.hovered])
+
+    useEffect(() => {
+        setWidth(props.width ? props.width : 24)
+        setHeight(props.height ? props.height : 21.68)
+    }, [props.width, props.height])
+
+    const getSrc = () => {
+        if (props.selected) {
+            if (props.hovered) {
+                return '/hover-select-fav.svg'
+            }
+            return '/select-fav.svg'
         }
-        return <Image src='/select-fav.svg' alt='selected fav' width={props.width ?? 24} height={props.height ?? 21.68} />
+        return '/unselect-fav.svg'
     }
-    return <Image src='/unselect-fav.svg' alt='unselect fav' width={props.width ?? 24} height={props.height ?? 21.68} />
+
+    return <Image src={src} alt='fav icon' width={width} height={height} />
 }
 
 export default FavIcon

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useFecthCharacters } from "@/presentation/hooks/useFetchCharacters";
 import ProgressBar from "@/presentation/components/ui/progress-bar/progress-bar";
 import SearchSection from "../search-section/search-section";
@@ -15,7 +15,7 @@ const MainView = () => {
     const [characters, setCharacters] = useState<Character[]>([])
 
     useEffect(() => {
-        if (!searching && filteredCharacters) {
+        if (searching && filteredCharacters) {
             setCharacters(filteredCharacters)
         } else if (!searching && data) {
             setCharacters(data)
@@ -31,6 +31,7 @@ const MainView = () => {
     }
     
     return <>
+        { (searching && !filteredCharacters) && <ProgressBar /> }
         <SearchSection value={searchValue} setValue={setSearchValue} result={characters?.length ?? 0} />
         <CharactersList characters={characters} />
     </>

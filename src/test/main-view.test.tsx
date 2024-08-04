@@ -50,7 +50,7 @@ describe('MainView Component', () => {
         (useFetchCharacterByName as jest.Mock).mockReturnValue({
             filteredCharacters: [mockCharacter],
             setName: mockSetName,
-            searching: false,
+            searching: true,
         });
 
         render(<MainView />);

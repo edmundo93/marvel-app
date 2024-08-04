@@ -5,22 +5,29 @@ import { baseUrl } from '@/features/characters/infrastructure/configs/urls';
 import { apiFetch } from '../adapters/apiAdapter';
 import { CharacterServiceI } from './CharacterService';
 
+import mockjson from '@/test/mocks/characters-mock.json';
+
 export const CharactersServiceImpl: CharacterServiceI = {
   getAllCharacters: async (): Promise<Character[]> => {
     try {
-      const url = `${baseUrl}&limit=50`;
-      const resp = await apiFetch(url);
-      return resp?.data?.results ?? [];
+      // const url = `${baseUrl}&limit=50`;
+      // const resp = await apiFetch(url);
+      // return resp?.data?.results ?? [];
+      const resp = await Promise.resolve(mockjson);
+      return resp?.data?.results;
     } catch (error: any) {
       // As we don´t need to handle error we return an empty array
       return [];
     }
   },
 
-  getCharacterByName: async (name: string): Promise<Character[]> => {
+  getCharacterByName: async (
+    name: string,
+    signal: AbortSignal,
+  ): Promise<Character[]> => {
     try {
       const url = `${baseUrl}&nameStartsWith=${name}`;
-      const resp = await apiFetch(url);
+      const resp = await apiFetch(url, signal);
       return resp?.data?.results ?? [];
     } catch (error: any) {
       // As we don´t need to handle error we return an empty array

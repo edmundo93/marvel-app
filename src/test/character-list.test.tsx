@@ -6,9 +6,14 @@ import { Character } from '@/features/characters/domain/entities/Character';
 import { mockCharacters } from './mocks/characters';
 
 // Mock the CharacterCard component
-jest.mock('@/presentation/components/character-card/character-card', () => (props: { character: Character }) => (
+jest.mock('@/presentation/components/character-card/character-card', () => {
+    const MockCharacterCard = (props: { character: Character }) => (
     <div data-testid="character-card">{props.character.name}</div>
-));
+)
+    MockCharacterCard.displayName = 'MockCharacterCard'
+    
+    return MockCharacterCard
+});
 
 describe('CharactersList Component', () => {
 

@@ -7,7 +7,7 @@ import { CharactersServiceImpl } from '@/features/characters/infrastructure/serv
 
 export const useFecthCharacters = () => {
     const [data, setData] = useState<Character[] | null>(null)
-    const [loading, setLoading] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(true)
 
     useEffect(() => { 
         void fetchData()

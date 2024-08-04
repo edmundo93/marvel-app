@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Character } from '@/domain/entities/Character';
+import { Character } from '@/features/characters/domain/entities/Character';
 import { Dispatch } from 'react';
 
 export interface FavCharactersStateI {
@@ -11,6 +11,6 @@ export interface FavCharactersContextI extends FavCharactersStateI {
 }
 
 export interface ActionI {
-  type: string;
+  type: 'ADD_CHARACTER' | 'REMOVE_CHARACTER';
   payload: any;
 }
