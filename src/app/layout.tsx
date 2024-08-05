@@ -3,9 +3,9 @@ import { Roboto_Condensed } from 'next/font/google';
 import './globals.css';
 import styles from './page.module.css';
 import Navbar from '@/presentation/components/nav-bar/nav-bar';
-import { FavCharactersContextProvider } from '@/presentation/contexts/fav-characters-context/fav-characters.context';
+import { CharactersContextProvider } from '@/presentation/contexts/characters-context/characters.context';
 import { Suspense } from 'react';
-import ProgressBar from '@/presentation/components/ui/progress-bar/progress-bar';
+import Loading from './loading';
 
 const roboto_condensed = Roboto_Condensed({ subsets: ['latin'], weight: '400',  })
 
@@ -23,14 +23,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto_condensed.className}>
         <main className={styles.main}>
-          <FavCharactersContextProvider>
+          <CharactersContextProvider>
             <Navbar />
-            <div className={styles.content}>
-              <Suspense fallback={<ProgressBar />}>
-                {children}
-              </Suspense>
-            </div>
-          </FavCharactersContextProvider>
+            <Suspense fallback={<Loading />}>
+              {children}
+            </Suspense>
+          </CharactersContextProvider>
         </main>
       </body>
     </html>

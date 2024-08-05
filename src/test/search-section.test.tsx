@@ -13,14 +13,14 @@ describe('SearchSection Component', () => {
     };
 
     test('renders SearchInput and results count', () => {
-        render(<SearchSection {...defaultProps} />);
+        render(<SearchSection searching={false} {...defaultProps} />);
         
         expect(screen.getByPlaceholderText('SEARCH A CHARACTER...')).toBeInTheDocument();
         expect(screen.getByText('0 RESULTS')).toBeInTheDocument();
     });
 
     test('calls setValue on input change', () => {
-        render(<SearchSection {...defaultProps} />);
+        render(<SearchSection searching={true} {...defaultProps} />);
         
         const input = screen.getByPlaceholderText('SEARCH A CHARACTER...');
         
@@ -32,7 +32,7 @@ describe('SearchSection Component', () => {
     test('displays correct results count', () => {
         const customProps = { ...defaultProps, result: 5 };
         
-        render(<SearchSection {...customProps} />);
+        render(<SearchSection searching={true} {...customProps} />);
 
         expect(screen.getByText('5 RESULTS')).toBeInTheDocument();
     });

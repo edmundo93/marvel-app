@@ -11,7 +11,7 @@ interface IProps {
 const FavNav = (props: IProps) => {
   return (
     <div className={styles.container}>
-      <Link href={''}><FavIcon selected={true} width={24} height={21.68} /></Link>
+      <Link href={'/favorites'}><FavIcon selected={true} width={24} height={21.68} /></Link>
       {props.numFavs}
     </div>
   );

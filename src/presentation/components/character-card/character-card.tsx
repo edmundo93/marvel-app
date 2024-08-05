@@ -2,18 +2,20 @@ import React, { useCallback, useEffect, useState } from 'react'
 
 import styles from './character-card.module.css'
 import FavIcon from '../fav-icon/fav-icon'
-import { useFavCharacters } from '@/presentation/contexts/fav-characters-context/fav-characters.context'
+import { useCharacters } from '@/presentation/contexts/characters-context/characters.context'
 import { Character } from '@/features/characters/domain/entities/Character'
-import CharacterPhoto from '../character-photo/character-photo'
+import Photo from '../photo/photo'
 import IconButton from '../ui/icon-button/icon-button'
-import { addFavCharacter, removeFavCharacter } from '@/presentation/contexts/fav-characters-context/actions'
+import { addFavCharacter, addSelectedCharacter, removeFavCharacter } from '@/presentation/contexts/characters-context/actions'
+import Link from 'next/link'
+import InfoBar from '../info-bar/info-bar'
 
 interface IProps {
     character: Character
 }
 
 const CharacterCard = (props: IProps) => {
-    const { dispatch, favCharacters } = useFavCharacters()
+    const { dispatch, favCharacters } = useCharacters()
     const [hovered, setHovered] = useState<boolean>(false)
     const [fav, setFav] = useState<boolean>(false)
 
@@ -45,17 +47,22 @@ const CharacterCard = (props: IProps) => {
         setHovered(false)
     }
 
-    return <div className={styles.card} onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHanlder} >
-        <div className={styles.photo}>
-            <CharacterPhoto thumbnail={props.character.thumbnail} fill sizes='max-width: 172.5px' />
-            <div className={styles.separator}></div>
+    const onClickHandler = () => {
+        addSelectedCharacter(dispatch, props.character)
+    }
+
+    return <Link href={`character/${props.character.id}`} onClick={onClickHandler} className={styles.link}>
+        <div className={styles.card} onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHanlder} >
+            <div className={styles.photo}>
+                <Photo thumbnail={props.character.thumbnail} fill sizes='100%' />
+                <div className={styles.separator}></div>
+            </div>
+            <InfoBar className={styles.info}>
+                <div>{props.character.name}</div>
+                <IconButton icon={<FavIcon width={12} height={10.84} selected={fav} hovered={hovered} />} onClick={onFavButtonClickHandler} />
+            </InfoBar>
         </div>
-        <div className={styles.info}>
-            <div>{props.character.name}</div>
-            <IconButton icon={<FavIcon width={12} height={10.84} selected={fav} hovered={hovered} />} onClick={onFavButtonClickHandler} />
-        </div>
-        <div className={styles.corner}></div>
-    </div>
+    </Link>
 }
 
 export default CharacterCard

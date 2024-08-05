@@ -1,0 +1,158 @@
+.characterResume {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1512px;
+  max-height: 320px;
+  padding: 0px 48px 0px 48px;
+  gap: 0px;
+  display: flex;
+  justify-content: center !important;
+  flex-wrap: wrap;
+  align-items: center;
+  z-index: 0 !important;
+
+  --corner-width: 24px;
+  --corner-height: 24px;
+}
+
+.resumeContent {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 100%;
+  height: 100%;
+  max-width: 960px;
+  max-height: 320px;
+  gap: 0px;
+  overflow: auto;
+}
+
+.resumePhoto {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-width: 320px;
+  max-height: 320px;
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  border-bottom: 4px;
+}
+
+.resumeInfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 640px;
+  max-height: 320px;
+  padding: 48px 0px 48px 48px;
+  gap: 24px;
+}
+
+.characterTitle {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 592px;
+  max-height: 47px;
+  gap: 0px;
+  justify-content: space-between;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 46.88px;
+  text-align: left;
+}
+
+.characterDescription {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 592px;
+  max-height: 57px;
+  gap: 0px;
+  line-height: 18.75px;
+  text-align: left;
+}
+
+@media (min-width: 701px) and (max-width: 1120px) {
+  .characterResume {
+    max-width: 834px;
+    max-height: 278px;
+    padding: 0;
+  }
+
+  .resumeContent {
+    max-width: 834px;
+    max-height: 276px;
+  }
+
+  .resumePhoto {
+    max-width: 278px;
+    max-height: 278px;
+  }
+
+  .resumeInfo {
+    max-width: 556px;
+    max-height: 278px;
+    padding: 48px 0px 0px 0px;
+  }
+
+  .characterTitle {
+    max-width: 460px;
+    max-height: 38px;
+    font-size: 32px;
+    line-height: 37.5px;
+  }
+
+  .characterDescription {
+    max-width: 460px;
+    max-height: 57px;
+  }
+}
+
+@media (max-width: 700px) {
+  .characterResume {
+    max-width: 393px;
+    max-height: 607.89px;
+    padding: 0;
+  }
+
+  .resumeContent {
+    max-width: 393px;
+    max-height: 607.89px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+  }
+
+  .resumePhoto {
+    max-width: 393px;
+    max-height: 397.89px;
+  }
+
+  .resumeInfo {
+    max-width: 393px;
+    max-height: 210px;
+    padding: 24px 16px 48px 16px;
+  }
+
+  .characterTitle {
+    max-width: 361px;
+    max-height: 38px;
+    font-size: 32px;
+    line-height: 37.5px;
+    gap: 0;
+  }
+
+  .characterDescription {
+    max-width: 361px;
+    max-height: 76px;
+  }
+}

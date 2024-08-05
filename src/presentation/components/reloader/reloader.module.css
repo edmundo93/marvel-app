@@ -1,0 +1,23 @@
+.reloader {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  background-color: var(--primary-bar-bgcolor, #000000);
+  color: var(--primary-bar-color, #ffffff);
+  padding: 1rem;
+  text-align: center;
+}
+
+.reloader button {
+  position: relative;
+  padding: 1rem;
+  background-color: var(--marvel-red, #ec1d24);
+  color: var(--primary-bar-color, #ffffff);
+  border: 0;
+  cursor: pointer;
+}

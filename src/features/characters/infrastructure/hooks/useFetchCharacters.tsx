@@ -7,18 +7,23 @@ import { CharactersServiceImpl } from '@/features/characters/infrastructure/serv
 
 export const useFecthCharacters = () => {
     const [data, setData] = useState<Character[] | null>(null)
-    const [loading, setLoading] = useState<boolean>(true)
 
-    useEffect(() => { 
-        void fetchData()
+    useEffect(() => {
+        const abortController = new AbortController()
+        const signal = abortController.signal
+        void fetchData(signal)
+
+        return () => {
+            if (abortController) {
+                abortController.abort()
+            }
+        }
     }, [])
 
-    const fetchData = async () => {
-        setLoading(true)
-        const characters = await CharactersService(CharactersServiceImpl).getAllCharacters()
-        setData(characters)
-        setLoading(false)
+    const fetchData = async (signal: AbortSignal) => {
+        const resp = await CharactersService(CharactersServiceImpl).getAllCharacters(signal)
+        setData(resp)
     }
     
-    return { data, loading }
+    return { data }
 }

@@ -11,6 +11,6 @@ export const apiFetch = async (url: string, signal: any): Promise<any> => {
 
     throw new Error(`${response.status} ${response.statusText}`);
   } catch (error: any) {
-    throw error.message;
+    throw error;
   }
 };

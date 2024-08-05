@@ -1,15 +1,19 @@
 'use client'
 
 import React, { useEffect, useState } from "react";
-import { useFecthCharacters } from "@/presentation/hooks/useFetchCharacters";
-import ProgressBar from "@/presentation/components/ui/progress-bar/progress-bar";
 import SearchSection from "../search-section/search-section";
-import { useFetchCharacterByName } from "@/presentation/hooks/useFetcCharacterByName";
+import { useFetchCharacterByName } from "@/features/characters/infrastructure/hooks/useFetcCharacterByName";
 import { Character } from "@/features/characters/domain/entities/Character";
 import CharactersList from "../characters-list/characters-list";
+import Reloader from "../reloader/reloader";
+import { usePathname } from "next/navigation";
 
-const MainView = () => {
-    const { data, loading } = useFecthCharacters()
+interface IProps {
+    characters: Character[]
+}
+
+const MainView = (props: IProps) => {
+    const pathname = usePathname()
     const { filteredCharacters, setName, searching } = useFetchCharacterByName()
     const [searchValue, setSearchValue] = useState<string>('')
     const [characters, setCharacters] = useState<Character[]>([])
@@ -17,23 +21,19 @@ const MainView = () => {
     useEffect(() => {
         if (searching && filteredCharacters) {
             setCharacters(filteredCharacters)
-        } else if (!searching && data) {
-            setCharacters(data)
+        } else {
+            setCharacters(props.characters)
         }
-    }, [data, filteredCharacters, searching])
+    }, [props.characters, filteredCharacters, searching])
 
     useEffect(() => {
         setName(searchValue)
     }, [searchValue])
-
-    if (loading) {
-        return <ProgressBar />
-    }
     
     return <>
-        { (searching && !filteredCharacters) && <ProgressBar /> }
-        <SearchSection value={searchValue} setValue={setSearchValue} result={characters?.length ?? 0} />
-        <CharactersList characters={characters} />
+        <SearchSection value={searchValue} setValue={setSearchValue} result={characters?.length ?? 0} searching={searching && !filteredCharacters} />
+        { pathname === '/' && !props.characters.length && !searching && <Reloader /> }
+        {characters.length > 0 && <CharactersList characters={characters} />}
     </>
 }
 

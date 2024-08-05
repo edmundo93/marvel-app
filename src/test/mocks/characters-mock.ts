@@ -1,4 +1,4 @@
-{
+const characters = {
     "code": 200,
     "status": "Ok",
     "copyright": "© 2024 MARVEL",
@@ -8270,3 +8270,5 @@
         ]
     }
 }
+
+export default characters;
