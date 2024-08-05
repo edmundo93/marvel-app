@@ -220,4 +220,4 @@ export const mockCharacter = {
   ],
 };
 
-export const mockCharacters = [mockCharacter]
+export const mockCharacters = [mockCharacter];

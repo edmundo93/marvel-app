@@ -7,7 +7,10 @@ import { CharactersContextProvider } from '@/presentation/contexts/characters-co
 import { Suspense } from 'react';
 import Loading from './loading';
 
-const roboto_condensed = Roboto_Condensed({ subsets: ['latin'], weight: '400',  })
+const roboto_condensed = Roboto_Condensed({
+  subsets: ['latin'],
+  weight: '400',
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -25,9 +28,7 @@ export default function RootLayout({
         <main className={styles.main}>
           <CharactersContextProvider>
             <Navbar />
-            <Suspense fallback={<Loading />}>
-              {children}
-            </Suspense>
+            <Suspense fallback={<Loading />}>{children}</Suspense>
           </CharactersContextProvider>
         </main>
       </body>

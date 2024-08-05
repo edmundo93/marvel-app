@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React from 'react';
 import Image from 'next/image';
@@ -9,14 +9,20 @@ import { useCharacters } from '@/presentation/contexts/characters-context/charac
 import Link from 'next/link';
 
 const Navbar = () => {
-  const { favCharacters } = useCharacters()
+  const { favCharacters } = useCharacters();
 
   return (
     <nav className={styles.navbar}>
       <Link href={'/'} replace>
-        <Image src={'/marvel-logo.svg'} width={130} height={52} alt="marvel logo" priority />
+        <Image
+          src={'/marvel-logo.svg'}
+          width={130}
+          height={52}
+          alt="marvel logo"
+          priority
+        />
       </Link>
-      <FavNav numFavs={favCharacters?.length ?? 0}/>
+      <FavNav numFavs={favCharacters?.length ?? 0} />
     </nav>
   );
 };

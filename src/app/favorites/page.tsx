@@ -1,8 +1,7 @@
-import FavoritesView from "@/presentation/components/favorites-view/favorties-view"
-
+import FavoritesView from '@/presentation/components/favorites-view/favorties-view';
 
 const Favorites = () => {
-    return <FavoritesView />
-}
+  return <FavoritesView />;
+};
 
-export default Favorites
+export default Favorites;
