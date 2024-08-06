@@ -1,5 +1,5 @@
-import { Character } from '../../domain/entities/Character';
-import { ComicI } from '../../domain/entities/Comic';
+import { Character } from '@/features/characters/domain/entities/Character';
+import { ComicI } from '@/features/characters/domain/entities/Comic';
 
 export interface CharacterServiceI {
   getAllCharacters(signal: AbortSignal): Promise<Character[] | null>;

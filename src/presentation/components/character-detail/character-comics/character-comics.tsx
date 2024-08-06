@@ -5,7 +5,7 @@ import { useMemo } from 'react';
 import { ComicI, DateT } from '@/features/characters/domain/entities/Comic';
 import { getYear } from '@/utils/date';
 import ComicCard from '@/presentation/components/comic-card/comic-card';
-import ProgressBar from '../../ui/progress-bar/progress-bar';
+import ProgressBar from '@/presentation/components/ui/progress-bar/progress-bar';
 
 interface IProps {
   characterId: number;

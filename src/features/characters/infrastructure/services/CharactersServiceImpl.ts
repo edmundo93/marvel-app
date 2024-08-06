@@ -5,9 +5,9 @@ import {
   baseUrl,
   buildUrl,
 } from '@/features/characters/infrastructure/configs/urls';
-import { apiFetch } from '../adapters/apiAdapter';
+import { apiFetch } from '@/features/characters/infrastructure/adapters/apiAdapter';
 import { CharacterServiceI } from './CharacterService';
-import { ComicI } from '../../domain/entities/Comic';
+import { ComicI } from '@/features/characters/domain/entities/Comic';
 import {
   getStoredCharacters,
   storeCharacters,

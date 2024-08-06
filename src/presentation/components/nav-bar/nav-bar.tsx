@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 
 import styles from './nav-bar.module.css';
-import FavNav from '../fav-nav/fav-nav';
+import FavNav from '@/presentation/components/fav-nav/fav-nav';
 import { useCharacters } from '@/presentation/contexts/characters-context/characters.context';
 import Link from 'next/link';
 

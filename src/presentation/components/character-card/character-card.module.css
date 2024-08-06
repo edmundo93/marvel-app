@@ -23,7 +23,6 @@
   max-height: 189.97px;
   gap: 0px;
   border-bottom: 4px;
-  opacity: 0px;
   background-color: var(--background-photo-card);
 }
 
@@ -34,7 +33,6 @@
   max-width: 172.5px;
   max-height: 5.38px;
   gap: 0px;
-  opacity: 0px;
   background-color: var(--marvel-red);
   bottom: 0;
 }

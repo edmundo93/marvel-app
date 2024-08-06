@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { Character } from '@/features/characters/domain/entities/Character';
 import Matrix from '@/presentation/components/ui/matrix/matrix';
-import CharacterCard from '../character-card/character-card';
+import CharacterCard from '@/presentation/components/character-card/character-card';
 
 interface IProps {
   characters: Character[];

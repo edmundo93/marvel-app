@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import SearchSection from '../search-section/search-section';
+import SearchSection from '@/presentation/components/search-section/search-section';
 import { useFetchCharacterByName } from '@/features/characters/infrastructure/hooks/useFetcCharacterByName';
 import { Character } from '@/features/characters/domain/entities/Character';
-import CharactersList from '../characters-list/characters-list';
-import Reloader from '../reloader/reloader';
+import CharactersList from '@/presentation/components/characters-list/characters-list';
+import Reloader from '@/presentation/components/reloader/reloader';
 import { usePathname } from 'next/navigation';
 
 interface IProps {

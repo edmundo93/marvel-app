@@ -8,7 +8,7 @@ import {
 import InfoBar from '@/presentation/components/info-bar/info-bar';
 
 import styles from './character-resume.module.css';
-import Photo from '../../photo/photo';
+import Photo from '@/presentation/components/photo/photo';
 import FavIcon from '@/presentation/components/fav-icon/fav-icon';
 import IconButton from '@/presentation/components/ui/icon-button/icon-button';
 

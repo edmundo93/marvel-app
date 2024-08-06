@@ -1,8 +1,8 @@
 import React from 'react';
-import SearchInput from '../ui/search-input/search-input';
+import SearchInput from '@/presentation/components/ui/search-input/search-input';
 
 import styles from './search-section.module.css';
-import ProgressBar from '../ui/progress-bar/progress-bar';
+import ProgressBar from '@/presentation/components/ui/progress-bar/progress-bar';
 
 interface IProps {
   value: string;

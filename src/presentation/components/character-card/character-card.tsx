@@ -1,18 +1,18 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
 import styles from './character-card.module.css';
-import FavIcon from '../fav-icon/fav-icon';
+import FavIcon from '@/presentation/components/fav-icon/fav-icon';
 import { useCharacters } from '@/presentation/contexts/characters-context/characters.context';
 import { Character } from '@/features/characters/domain/entities/Character';
-import Photo from '../photo/photo';
-import IconButton from '../ui/icon-button/icon-button';
+import Photo from '@/presentation/components/photo/photo';
+import IconButton from '@/presentation/components/ui/icon-button/icon-button';
 import {
   addFavCharacter,
   addSelectedCharacter,
   removeFavCharacter,
 } from '@/presentation/contexts/characters-context/actions';
 import Link from 'next/link';
-import InfoBar from '../info-bar/info-bar';
+import InfoBar from '@/presentation/components/info-bar/info-bar';
 
 interface IProps {
   character: Character;
@@ -71,7 +71,7 @@ const CharacterCard = (props: IProps) => {
         onMouseLeave={onMouseLeaveHanlder}
       >
         <div className={styles.photo}>
-          <Photo thumbnail={props.character.thumbnail} fill sizes="100%" />
+          <Photo thumbnail={props.character?.thumbnail} fill sizes="100%" />
           <div className={styles.separator}></div>
         </div>
         <InfoBar className={styles.info}>

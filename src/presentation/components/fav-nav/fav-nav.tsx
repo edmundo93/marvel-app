@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './fav-nav.module.css';
 import Link from 'next/link';
-import FavIcon from '../fav-icon/fav-icon';
+import FavIcon from '@/presentation/components/fav-icon/fav-icon';
 
 interface IProps {
   numFavs: number;
@@ -10,12 +10,12 @@ interface IProps {
 
 const FavNav = (props: IProps) => {
   return (
-    <div className={styles.container}>
-      <Link href={'/favorites'}>
+    <Link href={'/favorites'}>
+      <div className={styles.container}>
         <FavIcon selected={true} width={24} height={21.68} />
-      </Link>
-      {props.numFavs}
-    </div>
+        {props.numFavs}
+      </div>
+    </Link>
   );
 };
 
