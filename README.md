@@ -163,5 +163,9 @@ The application uses the Marvel API to fetch data about Marvel characters. To us
 
 There are a method which take the requests and add the necessary query params. It´s not necessary implements your query params.
 
+> [!WARNING]
+> The Marvel API not works fine and it takes so much time for return the info.
+> Sometimes the API return an empty response but there is a fallback modal to reload and request again.
+
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more information.
