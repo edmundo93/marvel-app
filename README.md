@@ -1,36 +1,163 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Marvel App
 
-## Getting Started
+This is a Next.js project created with `create-next-app`.
 
-First, run the development server:
+## Technologies Used
+- **Next.js**: React framework for web applications.
+- **TypeScript**: A programming language that extends JavaScript.
+- **CSS**: For styling the application.
+- **JavaScript**: Used in some parts of the project.
+- **Jest**: Used for unitary tests.
 
-```bash
+<img src="https://skillicons.dev/icons?i=react,nodejs,nextjs,css,js,ts,jest" />
+
+## Versions
+- **Next.js**: 14.2.5
+- **TypeScript**: ^5
+- **Node.js**: 20.14.0
+- **Jest**: 29.7.0
+
+## Application Description
+Marvel App is a web application that showcases Marvel characters using data from the Marvel API. Users can browse characters, view details and associated comics, and mark characters as favorites. The application is built with Next.js, TypeScript, and CSS, and includes unit and integration tests using Jest and React Testing Library.
+
+## Architecture
+The project follows a component-based architecture with the following features:
+- **App Router**: The newer Next.js router that allows you to use the React´s latest features.
+- **Hexagonal Architecture**: This architecture allows a clear separation between business logic and external interfaces, facilitating maintenance and scalability.
+- **Vertical Slicing**: The application is divided into vertical slices, where each slice contains all the necessary layers (UI, business logic, data access) for a specific functionality. This improves modularity and makes it easier to develop and test new features.
+
+## Folder Structure
+- 📁**public**: Public files such as images and fonts.
+- 📁**app**: Routes path structure and React Server Components: pages, layouts...
+- 📁**features**: slices of hexagonal structure.
+- 📁**presentation**: react components.
+
+```
+├───public
+├───app
+│   ├───character
+│   │   └───[characterId]
+│   └───favorites
+├───features
+│   └───characters
+│       ├───application
+│       │   └───services
+│       ├───domain
+│       │   ├───entities
+│       │   └───repositories
+│       └───infrastructure
+│           ├───adapters
+│           ├───configs
+│           ├───hooks
+│           └───services
+│               └───storage
+├───presentation
+│   ├───components
+│   │   ├───character-card
+│   │   ├───character-detail
+│   │   │   ├───character-comics
+│   │   │   └───character-resume
+│   │   ├───characters-list
+│   │   ├───comic-card
+│   │   ├───fav-icon
+│   │   ├───fav-nav
+│   │   ├───favorites-view
+│   │   ├───home-view
+│   │   ├───info-bar
+│   │   ├───main-view
+│   │   ├───nav-bar
+│   │   ├───photo
+│   │   ├───reloader
+│   │   ├───search-section
+│   │   └───ui
+│   │       ├───icon-button
+│   │       ├───matrix
+│   │       ├───progress-bar
+│   │       ├───row
+│   │       └───search-input
+│   ├───contexts
+│         └───characters-context
+│   
+├───test
+│   └───mocks
+└───utils
+```
+
+## Installation
+To install and run the project locally, follow these steps:
+
+1. Clone the repository:
+```
+git clone https://github.com/edmundo93/marvel-app.git
+cd marvel-app
+```
+
+2. Install the dependencies:
+```
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
+```
 npm run dev
 # or
 yarn dev
+```
+4. Open http://localhost:3000 in your browser to see the result.
+
+## Building the Application
+
+### Production Build:
+The producction build provide minified and concatenated assets in the `📁.next` folder.
+To create a production build of the application, follow these steps:
+
+1. Run the following command to create the build:
+```
+npm run build
 # or
-pnpm dev
-# or
-bun dev
+yarn build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. This command will generate a `📁.next` folder containing the optimized production files.
+3. To verify that the build was created correctly, you can run:
+```
+npm start
+# or
+yarn start
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Open http://localhost:3000 in your browser to see the application in production mode.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Development Build:
+The development build provide concatenated assets in the `📁.next` folder.
+To create a development build of the application, follow these steps:
 
-## Learn More
+1. Run the following command to create the build:
+```
+npm run build:dev
+# or
+yarn build:dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. This command will generate a `📁.next` folder containing the optimized production files.
+3. To verify that the build was created correctly, you can run:
+```
+npm start
+# or
+yarn start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Open http://localhost:3000 in your browser to see the application in production mode.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## API Integration
+The application uses the Marvel API to fetch data about Marvel characters. To use the API you need Marvel API credentials and some query params added to the requests:
+- `ts`: timestamp
+- `apiKey`: the public key associated to your Marvel API account
+- `hash`: a md5 hash created with the combination of the ts + apiKey + privateKey
 
-## Deploy on Vercel
+There are a method which take the requests and add the necessary query params. It´s not necessary implements your query params.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+This project is licensed under the MIT License. See the LICENSE file for more information.
