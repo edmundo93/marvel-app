@@ -1,0 +1,10 @@
+.row {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+}

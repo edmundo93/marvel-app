@@ -8,6 +8,9 @@
   "plugins": ["@typescript-eslint"],
   "rules": {
     "react/react-in-jsx-scope": "off", //React 17+ not need import React in every file
-    "react-hooks/exhaustive-deps": "off"
+    "react-hooks/exhaustive-deps": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-unused-expressions": "off",
+    "@typescript-eslint/no-unused-expressions": "error"
   }
 }

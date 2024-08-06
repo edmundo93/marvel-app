@@ -8,13 +8,13 @@
   padding: 0 3rem;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  overflow-y: auto;
-  overflow-x: hidden;
+  grid-template-rows: min-content;
+  overflow: auto;
 }
 
 @media (max-width: 700px) {
   .matrix {
-    width: 393px;
+    max-width: 393px;
     max-height: 2865.69px;
     padding: 0 1rem;
     grid-template-columns: repeat(2, 1fr);
@@ -23,7 +23,7 @@
 
 @media (min-width: 701px) and (max-width: 1120px) {
   .matrix {
-    width: 834px;
+    max-width: 834px;
     max-height: 1555.83px;
     grid-template-columns: repeat(4, 1fr);
   }

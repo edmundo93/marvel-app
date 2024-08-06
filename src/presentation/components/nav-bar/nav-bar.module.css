@@ -7,9 +7,11 @@
   display: flex;
   gap: 0px;
   justify-content: space-between;
+  align-items: center;
   background-color: var(--primary-bar-bgcolor);
   width: 100%;
   color: var(--primary-bar-color);
+  border-bottom: 1px solid #333333;
 }
 
 /* Mobile */
@@ -17,7 +19,7 @@
   .navbar {
     max-width: 393px;
     height: 84px;
-    padding-top: 1rem;
+    padding: 1rem;
   }
 }
 

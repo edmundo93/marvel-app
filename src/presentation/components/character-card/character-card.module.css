@@ -1,7 +1,14 @@
+.link {
+  width: fit-content;
+  height: fit-content;
+}
+
 .card {
   position: relative;
-  width: 172.5px;
-  height: 245.97px;
+  width: 100vw;
+  height: 100vh;
+  max-width: 172.5px;
+  max-height: 245.97px;
   gap: 0px;
   border: 3px 0px 0px 0px;
   display: flex;
@@ -10,37 +17,34 @@
 
 .photo {
   position: relative;
-  width: 172.5px;
-  height: 189.97px;
+  width: 100vw;
+  height: 100vh;
+  max-width: 172.5px;
+  max-height: 189.97px;
   gap: 0px;
   border-bottom: 4px;
-  opacity: 0px;
   background-color: var(--background-photo-card);
 }
 
 .separator {
   position: absolute;
-  width: 172.5px;
-  height: 5.38px;
+  width: 100vw;
+  height: 100vh;
+  max-width: 172.5px;
+  max-height: 5.38px;
   gap: 0px;
-  opacity: 0px;
   background-color: var(--marvel-red);
   bottom: 0;
 }
 
 .info {
   position: relative;
-  width: 172.5px;
-  height: 56px;
+  width: 100vw;
+  height: 100vh;
+  max-width: 172.5px;
+  max-height: 56px;
   padding: 16px 16px 24px 16px;
   gap: 0px;
-  justify-content: space-between;
-  display: flex;
-  flex-direction: row;
-  background: var(--primary-bar-bgcolor);
-  color: var(--primary-bar-color);
-  align-items: center;
-  z-index: 1;
 }
 
 .info::after {
@@ -52,45 +56,13 @@
   height: 0%;
   background: var(--marvel-red);
   z-index: -1;
+  transition-property: height;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .card:hover .info::after {
-    animation: expnadBgColorAnimation 0.3s ease-in-out forwards;
-  }
-
-  .card:not(:hover) .info::after {
-    animation: foldBgColorAnimation 0.3s ease-in-out forwards;
-  }
-}
-
-@keyframes expnadBgColorAnimation {
-  from {
-    height: 0%;
-  }
-
-  to {
     height: 100%;
   }
-}
-
-@keyframes foldBgColorAnimation {
-  from {
-    height: 100%;
-  }
-
-  to {
-    height: 0%;
-  }
-}
-
-.corner {
-  position: absolute;
-  width: 12.86px;
-  height: 12.86px;
-  gap: 0px;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(to bottom right, transparent 50%, #ffffff 50%);
-  z-index: 2;
 }

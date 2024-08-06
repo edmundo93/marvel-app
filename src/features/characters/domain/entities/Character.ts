@@ -1,4 +1,4 @@
-export type CharacterThumbnailT = {
+export type ThumbnailT = {
   path: string;
   extension: string;
 };
@@ -26,7 +26,7 @@ export interface Character {
   name: string;
   description: string;
   modified: string;
-  thumbnail: CharacterThumbnailT;
+  thumbnail: ThumbnailT;
   resourceURI: string;
   comics: CharacterCollectionT;
   series: CharacterCollectionT;

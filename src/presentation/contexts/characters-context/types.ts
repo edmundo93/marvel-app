@@ -2,15 +2,20 @@
 import { Character } from '@/features/characters/domain/entities/Character';
 import { Dispatch } from 'react';
 
-export interface FavCharactersStateI {
+export interface CharactersStateI {
   favCharacters: Character[];
+  selectedCharacter: Character | null;
 }
 
-export interface FavCharactersContextI extends FavCharactersStateI {
+export interface CharactersContextI extends CharactersStateI {
   dispatch: Dispatch<any>;
 }
 
 export interface ActionI {
-  type: 'ADD_CHARACTER' | 'REMOVE_CHARACTER';
+  type:
+    | 'ADD_SELECTED_CHARACTER'
+    | 'REMOVE_SELECTED_CHARACTER'
+    | 'ADD_FAV_CHARACTER'
+    | 'REMOVE_FAV_CHARACTER';
   payload: any;
 }

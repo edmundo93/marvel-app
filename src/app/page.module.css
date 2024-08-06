@@ -7,16 +7,15 @@
   gap: 0px;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .content {
   position: relative;
   width: 100vw;
-  height: 100vh;
   max-width: 1512px;
   height: 966.91px;
-  padding: 0 3rem;
+  padding: 3rem 0;
   gap: 24px;
   display: flex;
   flex-direction: column;
@@ -44,7 +43,7 @@
   .content {
     max-width: 393px;
     max-height: 3014.68px;
-    padding: 0 24px;
+    padding: 24px 0;
   }
 }
 

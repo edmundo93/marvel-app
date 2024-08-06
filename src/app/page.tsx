@@ -1,6 +1,12 @@
-import React from "react";
-import MainView from "@/presentation/components/main-view/main-view";
+import React from 'react';
+import HomeView from '@/presentation/components/home-view/home-view';
+
+import styles from './page.module.css';
 
 export default function Home() {
-  return <MainView />
+  return (
+    <div className={styles.content}>
+      <HomeView />
+    </div>
+  );
 }

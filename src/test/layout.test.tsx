@@ -4,16 +4,16 @@ import '@testing-library/jest-dom';
 import { ReactNode } from 'react';
 
 jest.mock('@/presentation/components/nav-bar/nav-bar', () => {
-  const MockNavBar = () => <div>Mocked Navbar</div>
-  MockNavBar.displayName = 'MockNavBar'
-  
-  return MockNavBar
+  const MockNavBar = () => <div>Mocked Navbar</div>;
+  MockNavBar.displayName = 'MockNavBar';
+
+  return MockNavBar;
 });
 jest.mock('@/presentation/components/ui/progress-bar/progress-bar', () => {
-  const MockProgressBar = () => <div>Mocked ProgressBar</div>
-  MockProgressBar.displayName = 'MockProgressBar'
-  
-  return MockProgressBar
+  const MockProgressBar = () => <div>Mocked ProgressBar</div>;
+  MockProgressBar.displayName = 'MockProgressBar';
+
+  return MockProgressBar;
 });
 
 describe('RootLayout', () => {
@@ -25,7 +25,11 @@ describe('RootLayout', () => {
   });
 
   it('renders Navbar component', () => {
-    render(<RootLayout><div /></RootLayout>);
+    render(
+      <RootLayout>
+        <div />
+      </RootLayout>,
+    );
 
     expect(screen.getByText('Mocked Navbar')).toBeInTheDocument();
   });
